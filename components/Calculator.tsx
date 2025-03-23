@@ -5,15 +5,24 @@ import { use, useState } from 'react';
 const Calculator = () => {
   const [input, setInput] = useState<string>('');
   const [result, setResult] = useState<string>('');
+  const [theme, setTheme] = useState<'theme1' | 'theme2' | 'theme3'>('theme1');
+
+  //   Handle them change
+  const handleThemeChange = (selectedTheme: 'theme1' | 'theme2' | 'theme3') => {
+    setTheme(selectedTheme);
+  };
 
   //   Handle input button presses (number or operator)
   const handleButtonClick = (value: string) => {
-    setInput((prevInput) => prevInput + value);
+    setInput((prevInput) => (result ? result + value : prevInput + value));
+    setResult(''); // Clear the result so the user can continue typing
   };
 
   // Handle delete button (DEL)
   const handleDelete = () => {
-    setInput((prevInput) => prevInput.slice(0, -1));
+    setInput((prevInput) =>
+      result ? result.slice(0, -1) : prevInput.slice(0, -1)
+    );
   };
 
   //   Handle reset button (RESET)
@@ -25,8 +34,11 @@ const Calculator = () => {
   // Handle calculation when "=" button is pressed
   const handleCalculate = () => {
     try {
+      const sanitizedInput = input.replace(/x/g, '*');
       // Evaluate the expression and update the result
-      const evaluatedResult = eval(input); // eval is risky to use
+      const evaluatedResult = Function(
+        `'use strict'; return (${sanitizedInput})`
+      )();
       setResult(evaluatedResult.toString());
     } catch (error) {
       setResult('Error');
@@ -61,21 +73,42 @@ const Calculator = () => {
             </div>
             <div className="flex flex-row justify-center items-center gap-4 bg-very-dark-desaturated-blue-toggle p-8P rounded-full">
               <div className="">
-                <input id="first" className="hidden peer" type="radio" />
+                <input
+                  id="first"
+                  className="hidden peer"
+                  type="radio"
+                  name="theme"
+                  checked={theme === 'theme1'}
+                  onChange={() => handleThemeChange('theme1')}
+                />
                 <label
                   htmlFor="first"
                   className="w-6 h-6 rounded-full transparent peer-checked:bg-red flex items-center justify-center cursor-pointer"
                 />
               </div>
               <div className="">
-                <input id="second" className="hidden peer" type="radio" />
+                <input
+                  id="second"
+                  className="hidden peer"
+                  type="radio"
+                  name="theme"
+                  checked={theme === 'theme2'}
+                  onChange={() => handleThemeChange('theme2')}
+                />
                 <label
                   htmlFor="second"
                   className="w-6 h-6 rounded-full transparent peer-checked:bg-red flex items-center justify-center cursor-pointer"
                 />
               </div>
               <div className="">
-                <input id="third" className="hidden peer" type="radio" />
+                <input
+                  id="third"
+                  className="hidden peer"
+                  type="radio"
+                  name="theme"
+                  checked={theme === 'theme3'}
+                  onChange={() => handleThemeChange('theme3')}
+                />
                 <label
                   htmlFor="third"
                   className="w-6 h-6 rounded-full transparent peer-checked:bg-red flex items-center justify-center cursor-pointer"
@@ -87,7 +120,7 @@ const Calculator = () => {
       </section>
 
       {/* INPUT */}
-      <form onSubmit={() => handleSubmit}>
+      <form onSubmit={handleSubmit}>
         <section className="flex justify-between items-center w-full max-w-container-400 mb-32M">
           <label
             htmlFor="input-num"
@@ -96,9 +129,9 @@ const Calculator = () => {
             <input
               id="input-num"
               type="text"
-              value={input}
+              value={result || input}
               readOnly
-              className="text-2xl text-white text-end font-bold w-full bg-very-dark-desaturated-blue-screen rounded-5BR "
+              className="pointer-events-none text-2xl text-white text-end font-bold w-full bg-very-dark-desaturated-blue-screen rounded-5BR "
             />
           </label>
         </section>
@@ -109,9 +142,10 @@ const Calculator = () => {
             {['7', '8', '9', 'DEL'].map((value) =>
               value === 'DEL' ? (
                 <button
+                  key={value}
                   type="button"
                   className="text-lg text-white bg-desaturated-dark-blue-key-bg p-16P border-b-blue-900 border-b-[5px]"
-                  onClick={() => handleDelete}
+                  onClick={handleDelete}
                 >
                   DEL
                 </button>
