@@ -41,7 +41,7 @@ const Calculator = () => {
       )();
       setResult(evaluatedResult.toString());
     } catch (error) {
-      setResult('Error');
+      setResult(`Error: ${error}`);
     }
   };
 
