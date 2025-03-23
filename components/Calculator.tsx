@@ -99,9 +99,9 @@ const Calculator = () => {
                 ${theme === 'theme3' ? 'text-light-yellow' : ''}
                 `}
             >
-              <label htmlFor="first">1</label>
-              <label htmlFor="second">2</label>
-              <label htmlFor="third">3</label>
+              <div aria-label="theme 1">1</div>
+              <div aria-label="theme 2">2</div>
+              <div aria-label="theme 3">3</div>
             </div>
             <div
               className={`flex flex-row justify-center items-center gap-4 p-8P rounded-full
@@ -114,54 +114,63 @@ const Calculator = () => {
                 ${theme === 'theme3' ? 'bg-very-dark-violet-toggle' : ''}
                 `}
             >
-              <div className="">
+              <fieldset className="">
+                <legend></legend>
                 <input
                   id="first"
                   className="hidden peer"
                   type="radio"
                   name="theme"
+                  aria-label="theme1"
                   checked={theme === 'theme1'}
                   onChange={() => handleThemeChange('theme1')}
                 />
                 <label
                   htmlFor="first"
+                  aria-label="option 1"
                   className={`w-6 h-6 rounded-full transparent flex items-center justify-center cursor-pointer
                     ${theme === 'theme1' ? 'peer-checked:bg-red' : ''}
                 `}
                 />
-              </div>
-              <div className="">
+              </fieldset>
+              <fieldset className="">
+                <legend></legend>
                 <input
                   id="second"
                   className="hidden peer"
                   type="radio"
                   name="theme"
+                  aria-label="theme2"
                   checked={theme === 'theme2'}
                   onChange={() => handleThemeChange('theme2')}
                 />
                 <label
                   htmlFor="second"
+                  aria-label="option 2"
                   className={`w-6 h-6 rounded-full transparent flex items-center justify-center cursor-pointer
                     ${theme === 'theme2' ? 'peer-checked:bg-orange' : ''}`}
                 />
-              </div>
-              <div className="">
+              </fieldset>
+              <fieldset className="">
+                <legend></legend>
                 <input
                   id="third"
                   className="hidden peer"
                   type="radio"
                   name="theme"
+                  aria-label="theme3"
                   checked={theme === 'theme3'}
                   onChange={() => handleThemeChange('theme3')}
                 />
                 <label
                   htmlFor="third"
+                  aria-label="option 3"
                   className={`w-6 h-6 rounded-full transparent flex items-center justify-center cursor-pointer
                     ${theme === 'theme1' ? 'peer-checked:bg-red' : ''}
                     ${theme === 'theme2' ? 'peer-checked:bg-orange' : ''}
                     ${theme === 'theme3' ? 'peer-checked:bg-pure-cyan' : ''}`}
                 />
-              </div>
+              </fieldset>
             </div>
           </div>
         </div>
@@ -171,6 +180,7 @@ const Calculator = () => {
       <form onSubmit={handleSubmit}>
         <section className="flex justify-between items-center w-full max-w-container-400 mb-32M">
           <label
+            aria-label="result"
             htmlFor="input-num"
             className={`flex flex-col justify-center items-center w-full p-16P rounded-5BR
                 ${
@@ -187,6 +197,7 @@ const Calculator = () => {
               type="text"
               value={result || input}
               readOnly
+              aria-label="result"
               className={`pointer-events-none text-2xl text-end font-bold w-full rounded-5BR
                 ${
                   theme === 'theme1'
