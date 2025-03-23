@@ -11,6 +11,17 @@ export default function Document() {
 
         {/* Favicon */}
         <link rel="icon" href="/favicon.png" />
+
+        {/* Open Graph Meta Tags (Global for all pages) */}
+        <meta property="og:title" content="Calculator App" />
+        <meta
+          property="og:description"
+          content="A cool calculator app for all your needs"
+        />
+        <meta property="og:image" content="/og-image.png" />
+        <meta property="og:url" content="https://yourwebsite.com" />
+
+        {/* Add any global fonts or stylesheets here */}
       </Head>
       <body className="antialiased">
         <Main />

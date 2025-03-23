@@ -7,9 +7,13 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Calculator App</title>
-        <meta name="Calculator App" content="Home Page" />
-        <meta property="og:title" content="Home Page" />
+        <title>Home - Calculator App</title>
+        <meta name="description" content="Home Page of the Calculator App" />
+        <meta property="og:title" content="Home Page - Calculator App" />
+        <meta
+          property="og:description"
+          content="Welcome to the homepage of the Calculator App"
+        />
       </Head>
       <Calculator />
     </>
