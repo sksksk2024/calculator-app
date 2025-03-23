@@ -2,7 +2,6 @@
 
 import Calculator from '@/components/Calculator';
 import Head from 'next/head';
-// COMPONENTS
 
 export default function Home() {
   return (
