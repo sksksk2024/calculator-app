@@ -2,26 +2,139 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* Google Fonts(Optimised) */
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap');
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+img {
+  /* max-width: 100%; */
+  user-select: none;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+/* Variables */
+
+:root {
+  /* Font Size */
+  --font-size-1-5xs: 0.1rem;
+  --font-size-2xs: 0.5rem;
+  --font-size-xs: 0.75rem; /* Tailwind default */
+  --font-size-sm: 0.875rem; /* Tailwind default */
+  --font-size-md: 1rem;
+  --font-size-md-1: 1.1rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 1.5rem;
+  --font-size-2xl: 2rem;
+  --font-size-2-2xl: 2.2rem;
+  --font-size-2-4xl: 2.4rem;
+  --font-size-3xl: 3rem;
+  --font-size-4xl: 4rem;
+  --font-size-4-5xl: 4.5rem;
+  /* ///////////////////////////////////////////////////// */
+  /* Colors */
+  /* THEME 1 */
+  /* Backgrounds */
+  --very-dark-desaturated-blue: hsl(222, 26%, 31%); /*(main background)*/
+  --very-dark-desaturated-blue: hsl(
+    223,
+    31%,
+    20%
+  ); /*(toggle background, keypad background)*/
+  --very-dark-desaturated-blue: hsl(224, 36%, 15%); /*(screen background)*/
+
+  /* Keys  */
+  --desaturated-dark-blue: hsl(225, 21%, 49%); /*(key background)*/
+  --desaturated-dark-blue: hsl(224, 28%, 35%); /*(key shadow)*/
+
+  --red: hsl(6, 63%, 50%); /*(key background, toggle)*/
+  --dark-red: hsl(6, 70%, 34%); /*(key shadow)*/
+
+  --light-grayish-orange: hsl(30, 25%, 89%); /*(key background)*/
+  --grayish-orange: hsl(28, 16%, 65%); /*(key shadow)*/
+
+  /* Text  */
+  --very-dark-grayish-blue: hsl(221, 14%, 31%);
+  /* ///////////////////////////////////////////////////// */
+  /* GRADIENTS */
+  /* Background gradient - Intro/CTA mobile nav: */
+  --very-light-red: hsl(13, 100%, 72%);
+  --light-red: hsl(353, 100%, 62%);
+  /* Background gradient - body: */
+  --very-dark-gray-blue: hsl(237, 17%, 21%);
+  --very-dark-desaturated-blue: hsl(237, 23%, 32%);
+}
+
+/* Styles */
+html,
+body {
+  min-height: 100dvh;
+  min-width: 100dvw;
+  overflow-x: clip;
+  overflow-y: scroll;
+  user-select: none;
+  font-family: 'Spartan League', sans-serif;
+  /* background: white; */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Loader */
+.container {
+  height: 5vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader {
+  width: 1.25rem;
+  height: 1.25rem;
+  position: relative;
+  animation: spin 2s linear infinite;
+}
+
+.loader::before,
+.loader::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0.625rem;
+  width: 0.625rem;
+  height: 0.625rem;
+  border-radius: 50%;
+  background: #3498db;
+  animation: bounce 2s infinite ease-in-out;
+}
+
+.loader::after {
+  left: -0.625rem;
+  background: #e74c3c;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-1.25rem);
   }
 }
