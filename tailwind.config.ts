@@ -128,6 +128,7 @@ module.exports = {
         bounceCombo: 'bounceCombo 3.5s forwards',
       },
       colors: {
+        // THEME 1
         'very-dark-desaturated-blue-main':
           'var(--very-dark-desaturated-blue-main)',
         'very-dark-desaturated-blue-toggle':
@@ -140,6 +141,30 @@ module.exports = {
         'light-grayish-orange': 'var(--light-grayish-orange)',
         'grayish-orange': 'var(--grayish-orange)',
         'very-dark-grayish-blue': 'var(--very-dark-grayish-blue)',
+        // THEME 2
+        'light-gray': 'var(--light-gray)',
+        'grayish-red': 'var(--grayish-red)',
+        'very-light-gray': 'var(--very-light-gray)',
+        'dark-moderate-cyan': 'var(--dark-moderate-cyan)',
+        orange: 'var(--orange)',
+        'very-dark-cyan': 'var(--very-dark-cyan)',
+        'dark-orange': 'var(--dark-orange)',
+        'light-grayish-yellow': 'var(--light-grayish-yellow)',
+        'dark-grayish-orange': 'var(--dark-grayish-orange)',
+        'very-dark-grayish-yellow': 'var(--very-dark-grayish-yellow)',
+        // THEME 3
+        'very-dark-violet-main': 'var(--very-dark-violet-main)',
+        'very-dark-violet-toggle': 'var(--very-dark-violet-toggle)',
+        'dark-violet': 'var(--dark-violet)',
+        'vivid-magenta': 'var(--vivid-magenta)',
+        'pure-cyan': 'var(--pure-cyan)',
+        'soft-cyan': 'var(--soft-cyan)',
+
+        'very-dark-violet': 'var(--very-dark-violet)',
+        'dark-magenta': 'var(--dark-magenta)',
+        'light-yellow': 'var(--light-yellow)',
+        'very-dark-blue': 'var(--very-dark-blue)',
+
         border: {
           'dark-red': 'var(--dark-red)',
           'desaturated-dark-blue-key-shadow':

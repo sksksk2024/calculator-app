@@ -67,6 +67,52 @@ img {
   /* Text  */
   --very-dark-grayish-blue: hsl(221, 14%, 31%);
 
+  /* THEME 2 */
+  /* BAKCGROUNDS */
+  --light-gray: hsl(0, 0%, 90%); /*(main background)*/
+  --grayish-red: hsl(0, 5%, 81%); /*(toggle background, keypad background)*/
+  --very-light-gray: hsl(0, 0%, 93%); /*(screen background)*/
+
+  /* Keys */
+
+  --dark-moderate-cyan: hsl(185, 42%, 37%); /*(key background)*/
+  --very-dark-cyan: hsl(185, 58%, 25%); /*(key shadow)*/
+
+  --orange: hsl(25, 98%, 40%); /*(key background, toggle)*/
+  --dark-orange: hsl(25, 99%, 27%); /*(key shadow)*/
+
+  --light-grayish-yellow: hsl(45, 7%, 89%); /*((key background)*/
+  --dark-grayish-orange: hsl(35, 11%, 61%); /*(key shadow)*/
+
+  /* Text */
+
+  --very-dark-grayish-yellow: hsl(60, 10%, 19%);
+
+  /* THEME 3 */
+  /* BACKGROUNDS */
+  --very-dark-violet-main: hsl(268, 75%, 9%); /*(main background)*/
+  --very-dark-violet-toggle: hsl(
+    268,
+    71%,
+    12%
+  ); /*(toggle background, keypad background, screen background)*/
+
+  /* Keys */
+
+  --dark-violet: hsl(281, 89%, 26%); /*(key background)*/
+  --vivid-magenta: hsl(285, 91%, 52%); /*(key shadow)*/
+
+  --pure-cyan: hsl(176, 100%, 44%); /*(key background background)*/
+  --soft-cyan: hsl(177, 92%, 70%); /*(key shadow)*/
+
+  --very-dark-violet: hsl(268, 47%, 21%); /*(key background)*/
+  --dark-magenta: hsl(290, 70%, 36%); /*(key shadow)*/
+
+  /* Text */
+
+  --light-yellow: hsl(52, 100%, 62%);
+  --very-dark-blue: hsl(198, 20%, 13%);
+
   /* ///////////////////////////////////////////////////// */
   /* GRADIENTS */
   /* Background gradient - Intro/CTA mobile nav: */
