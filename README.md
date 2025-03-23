@@ -31,11 +31,11 @@ Users should be able to:
 
 ### What I learned
 
-My first Next.js project, built entirely on my own. What I'm most proud of is how comfortable I've become with Next.js!
+I'm really proud of completing this project on my own, especially considering how frustrating I’ve found calculator-type challenges in the past! Along the way, I deepened my understanding of `useState` and learned how to add custom types, which helped me implement a 3-option toggle feature.
 
 ### Continued development
 
-I attempted to integrate parallax effects and smooth scrolling using Framer Motion but faced significant challenges. Moving forward, I plan to deepen my understanding of animation techniques to refine my skills before applying for jobs. Additionally, I aim to strengthen my grasp of Next.js alongside my MERN stack, as it significantly enhances SEO, performance, and developer experience.
+I’m now feeling confident and ready to tackle a MERN + Next.js + Framer Motion + TypeScript project (the classic **to-do list app** will be the perfect test). Wish me luck!
 
 ### Useful resources
 
