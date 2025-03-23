@@ -52,7 +52,13 @@ const Calculator = () => {
   };
 
   return (
-    <main className="flex flex-col justify-center items-center w-full mx-auto px-48P py-32P pt-112P h-[100dvh] font-league-spartan">
+    <main
+      className={`flex flex-col justify-center items-center w-full mx-auto px-48P py-32P pt-112P h-[100dvh] font-league-spartan
+        ${theme === 'theme1' ? 'bg-desaturated-dark-blue-key-shadow' : ''}
+        ${theme === 'theme2' ? 'bg-light-gray' : ''}
+        ${theme === 'theme3' ? 'bg-very-dark-violet-main' : ''}
+    `}
+    >
       {/* CALCULATOR HEADER */}
       <section className="flex justify-between items-center w-full max-w-container-400 mb-32M">
         <h1
